@@ -8,8 +8,12 @@ def get_book_text(book_name):
 
 
 def main():
-    book_name = input()
-    print(get_book_text(book_name))
+    print("Welcome to bookbot! The best book analyzer on the planet!")
+    print()
+    book = input("Enter the name of the book you want to analyze: ")
+    book_text = get_book_text(book)
+
+    print(book_text)
 
 
 if __name__ == "__main__":
