@@ -1,4 +1,4 @@
-from stats import get_book_text, get_letter_map, get_word_count
+from stats import get_book_text, get_letter_map, get_word_count, get_letter_counts
 
 BOOKS_PATH = "books/"
 
@@ -15,6 +15,9 @@ def main():
 
     letter_map = get_letter_map(book_text)
     print(letter_map)
+
+    letter_counts = get_letter_counts(letter_map)
+    print(letter_counts)
 
 
 if __name__ == "__main__":
