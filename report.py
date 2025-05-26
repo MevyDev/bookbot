@@ -5,7 +5,7 @@ def print_letter_counts(letter_counts):
         print(f"{letter}: {count}")
 
 
-def report(book_name, book_text, word_count, letter_map, letter_counts):
+def report(book_name, word_count, letter_counts):
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at books/{book_name}.txt...")
     print("----------- Word Count ----------")

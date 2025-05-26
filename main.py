@@ -15,9 +15,9 @@ def get_stats(book_name):
 def main():
     book_name = "frankenstein"
 
-    book_text, word_count, letter_map, letter_counts = get_stats(book_name)
+    _, word_count, _, letter_counts = get_stats(book_name)
 
-    report(book_name, book_text, word_count, letter_map, letter_counts)
+    report(book_name, word_count, letter_counts)
 
 
 if __name__ == "__main__":
