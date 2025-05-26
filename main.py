@@ -2,7 +2,7 @@ BOOKS_PATH = "books/"
 
 
 def get_book_text(book_name):
-    with open(BOOKS_PATH + book_name, "r") as f:
+    with open(BOOKS_PATH + book_name + ".txt", "r") as f:
         content = f.read()
         return content
 
