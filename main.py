@@ -3,21 +3,30 @@ from stats import get_book_text, get_letter_map, get_word_count, get_letter_coun
 BOOKS_PATH = "books/"
 
 
-def main():
-    print("Welcome to bookbot! The best book analyzer on the planet!")
-    print()
+def print_letter_counts(letter_counts):
+    for letter_dict in letter_counts:
+        letter = letter_dict["char"]
+        count = letter_dict["num"]
+        print(f"{letter}: {count}")
 
-    book = input("Enter the name of the book you want to analyze: ")
-    book_text = get_book_text(book, BOOKS_PATH)
 
+def report(book_name, books_path):
+    book_text = get_book_text(book_name, books_path)
     word_count = get_word_count(book_text)
-    print(f"{word_count} words found in the document")
-
     letter_map = get_letter_map(book_text)
-    print(letter_map)
-
     letter_counts = get_letter_counts(letter_map)
-    print(letter_counts)
+
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at books/{book_name}.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    print_letter_counts(letter_counts)
+    print("============= END ===============")
+
+
+def main():
+    report("frankenstein", BOOKS_PATH)
 
 
 if __name__ == "__main__":
