@@ -1,5 +1,4 @@
-from stats import get_book_text
-from stats import get_word_count
+from stats import get_book_text, get_letter_map, get_word_count
 
 BOOKS_PATH = "books/"
 
@@ -13,6 +12,9 @@ def main():
 
     word_count = get_word_count(book_text)
     print(f"{word_count} words found in the document")
+
+    letter_map = get_letter_map(book_text)
+    print(letter_map)
 
 
 if __name__ == "__main__":
