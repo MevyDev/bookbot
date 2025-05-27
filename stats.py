@@ -3,8 +3,8 @@ def get_word_count(text):
     return len(words)
 
 
-def get_book_text(book_name, books_path):
-    with open(books_path + book_name + ".txt", "r") as f:
+def get_book_text(book_path):
+    with open(book_path, "r") as f:
         content = f.read()
         return content
 

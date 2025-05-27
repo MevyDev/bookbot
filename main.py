@@ -1,11 +1,10 @@
+import sys
 from stats import get_book_text, get_letter_map, get_word_count, get_letter_counts
 from report import report
 
-BOOKS_PATH = "books/"
 
-
-def get_stats(book_name):
-    book_text = get_book_text(book_name, BOOKS_PATH)
+def get_stats(book_path):
+    book_text = get_book_text(book_path)
     word_count = get_word_count(book_text)
     letter_map = get_letter_map(book_text)
     letter_counts = get_letter_counts(letter_map)
@@ -13,9 +12,15 @@ def get_stats(book_name):
 
 
 def main():
-    book_name = "frankenstein"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
-    _, word_count, _, letter_counts = get_stats(book_name)
+    book_path = sys.argv[1]
+
+    book_name = book_path.split("/")[-1].split(".")[0]
+
+    _, word_count, _, letter_counts = get_stats(book_path)
 
     report(book_name, word_count, letter_counts)
 
