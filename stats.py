@@ -1,12 +1,12 @@
-def get_word_count(text):
-    words = text.split()
-    return len(words)
-
-
 def get_book_text(book_path):
     with open(book_path, "r") as f:
         content = f.read()
         return content
+
+
+def get_word_count(text):
+    words = text.split()
+    return len(words)
 
 
 def get_letter_map(text):
